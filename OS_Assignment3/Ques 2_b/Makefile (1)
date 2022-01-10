@@ -1,0 +1,9 @@
+msg_passing_que = writer_que reader_que
+
+all: $(msg_passing_que)
+
+writer_que: writer_que.c
+	gcc -o writer_que writer_que.c
+
+reader_que: reader_que.c
+	gcc -o reader_que reader_que.c

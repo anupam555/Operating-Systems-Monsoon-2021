@@ -1,0 +1,9 @@
+socket = domain_server domain_client
+
+all: $(socket)
+
+domain_server: domain_server.c
+	gcc -o server domain_server.c
+
+domain_client: domain_client.c
+	gcc -o client domain_client.c
