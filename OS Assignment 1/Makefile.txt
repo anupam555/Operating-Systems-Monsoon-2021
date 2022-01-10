@@ -1,0 +1,23 @@
+all: preprocess compile assemble link
+
+preprocess: forknew.c
+	gcc -E fork.c -o fork.i
+
+compile: fork.i
+	gcc -S fork.i -o fork.s
+
+.PHONY: clean
+
+
+run2: compile2
+assemble: fork.s
+	gcc -c fork.s -o fork.o
+
+clean:
+	rm fork fork.s fork.o fork.i
+
+compile2: threads.c
+	gcc -pthread threads.c -o threads
+
+link: fork.o
+	gcc fork.o -o fork

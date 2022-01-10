@@ -1,0 +1,25 @@
+
+								OS Assignment 1
+Ques1. 
+
+There are two files, one is fork.c and other is threads.c
+
+i) In the first file, I have used the fork() to create 2 processes, namely Child and parent process, which are used to print the averages of the sections A and B.
+fork() creates a duplicate process, which returns an Integer value, depending on the process to be performed. 
+If process returns 0, it goes into the Child process 
+whereas if greater than 0, it returns to the Parent process.
+
+To compile, first open the terminal and execute the command gcc fork.c -o fork
+Then simply type ./fork, it will run the file.
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+ii) In the second part, we are supposed to calculate the averages using create and join threads.
+
+To compile, first open the terminal and execute the command gcc -o threads.c threads -lpthread
+Then simply type ./threads, it will run the file.
+
+In the code, i have created 2 threads, one for calculating average marks of each section in various assignments.
+In the main(), after creating and joining the 2 threads, we are supposed to calculate the combined average marks in each of the section.
+The averages can be calculated by the arrays storing the average of each assignment.
+ 
