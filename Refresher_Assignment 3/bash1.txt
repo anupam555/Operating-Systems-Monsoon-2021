@@ -1,0 +1,140 @@
+#!/bin/bash
+#$1: dd
+#$2: mm
+#$3: yyyy
+if [ $2 -gt 12 ]
+then
+	echo "Invalid month"
+elif [ $3 -gt 9999 ]
+then 
+	echo "Year out of range"
+elif [ $3 -lt 0 ]
+then
+	echo "Error in the given year "
+elif [ $2 -eq 1 ]
+then
+	if [ $1 -gt 31 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 2 ]
+then 
+	rem=$(( $3 % 400 ))
+	rem1=$(( $3 % 100 ))
+	rem2=$(( $3 % 4 ))
+	if [ $rem -eq 0 ]
+	then
+		if [ $1 -gt 29 ]
+		then
+			echo "Day doesn't exists"
+		else
+			cal $2 $3
+		fi
+	elif [ $rem1 -eq 0 ]
+	then
+		if [ $1 -gt 28 ]
+		then
+			echo "Day doesn't exists." 
+		else
+			cal $2 $3
+		fi
+	elif [ $rem2 -eq 0 ]
+	then
+		if [ $1 -gt 29 ]
+		then
+			echo "Day doesn't exist."
+		else
+			cal $2 $3
+		fi
+	else
+		if [ $1 -gt 28 ]
+		then
+			echo "date incorrect"
+		else
+			cal $2 $3
+		fi
+	fi
+	
+elif [ $2 -eq 3 ]
+then
+	if [ $1 -gt 31 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 4 ]
+then
+	if [ $1 -gt 30 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 5 ]
+then
+	if [ $1 -gt 31 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 6 ]
+then
+	if [ $1 -gt 30 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 7 ]
+then
+	if [ $1 -gt 31 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 8 ]
+then
+	if [ $1 -gt 31 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 9 ]
+then
+	if [ $1 -gt 30 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 10 ]
+then
+	if [ $1 -gt 31 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 11 ]
+then
+	if [ $1 -gt 30 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+elif [ $2 -eq 12 ]
+then
+	if [ $1 -gt 31 ]
+	then
+		echo "Day doesnt exist"
+	else 
+		cal $2 $3
+	fi
+fi

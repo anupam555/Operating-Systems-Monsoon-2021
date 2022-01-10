@@ -1,0 +1,57 @@
+#!/bin/bash
+parameters=("$@")
+if [ $1 == "add" ];
+then 
+	val=0
+	for i in "${parameters[@]:1}";
+	do
+		val=$(( $val+$i ))
+	done
+		echo $val
+
+elif [ $1 == "sub" ]; then
+	val=$2
+	for i in "${parameters[@]:2}";
+	do
+		val=$(( $val-$i ))
+	done
+		echo $val
+
+elif [ $1=="mul" ]; then
+	val=$2
+	for i in "${parameters[@]:2}";
+	do
+		val=$(( $val*$i ))
+	done
+		echo $val
+	
+
+elif [ $1=="div" ]; then
+    	val=$2
+    	mark=0
+    	for i in "${parameters[@]:2}"; 
+    	do
+        	if [[ $i == 0 ]]; then
+            		mark=1
+            		break
+        	else
+            		val=$(( $val/$i ))
+    	done
+        	if [[ $mark -eq 1 ]]; then
+            		echo "division by 0 error"
+        	else
+            		echo $ans
+        fi
+
+elif [ $1=="exp" ]; then
+	val=$2
+	for i in "${parameters[@]:2}";
+	do
+		val=$(( $val**$i ))
+	done
+		echo $val
+
+else
+	echo "Invalid argument for operation type."
+	echo "operation type will only be {add, sub, mul, div, exp} "
+fi
