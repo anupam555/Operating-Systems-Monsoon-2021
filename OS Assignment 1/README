@@ -1,7 +1,5 @@
 
-								OS Assignment 1
-Ques1. 
-
+							Assignment 1
 There are two files, one is fork.c and other is threads.c
 
 i) In the first file, I have used the fork() to create 2 processes, namely Child and parent process, which are used to print the averages of the sections A and B.
